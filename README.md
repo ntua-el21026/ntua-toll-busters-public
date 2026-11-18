@@ -12,7 +12,7 @@ Toll Busters is a team project for the 2024–2025 Software Engineering course a
 
 The original NTUA OpenAPI specification described the course contract. The grading collection exercised that contract for assessment. Consult the [API guide](api/README.md) for authorized access and for the retained project-authored requests and implementation routes.
 
-The [fixture guide](backend/csv/README.md) describes an original synthetic station list and two distinct 56-passage scenarios. They exercise reset, import, and reporting interfaces. Historical reports and numerical results refer to the original inputs. The dashboard uses a newly drawn toll-station illustration at the existing asset path. [Frontend asset provenance](frontend/README.md)
+The [synthetic fixtures](backend/csv/README.md) include a 14-station list and two scenarios with 56 passages each. They exercise reset, import, and reporting. The coursework reports and recorded results use the original inputs. The dashboard uses a project-authored toll-station illustration. [Frontend asset provenance](frontend/README.md)
 
 ## Validation and limits
 
@@ -20,7 +20,7 @@ On Node v24.20.0, 28 offline tests passed, including certificate and hostname ch
 
 ### Known runtime limitations
 
-Use the coursework prototype with a disposable database and demonstration accounts on loopback. The CLI verifies HTTPS certificates and hostnames and accepts an explicit development CA. The browser uses a fixed local API URL, keeps its session token in `localStorage`, and loads listed CDN resources. [CLI TLS setup](cli/README.md#https-and-session-files) · [Backend connection lifecycle](backend/README.md#core-report-connection-lifecycle)
+Use the coursework prototype with a disposable database and demonstration accounts on loopback. The CLI verifies HTTPS certificates and hostnames and accepts an explicit development CA. The browser uses a fixed local API URL and stores its session token in `localStorage`. [CLI TLS setup](cli/README.md#https-and-session-files) · [Backend connection lifecycle](backend/README.md#core-report-connection-lifecycle)
 
 ## Local reproduction
 
