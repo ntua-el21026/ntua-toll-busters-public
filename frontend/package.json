@@ -1,0 +1,16 @@
+{
+  "name": "cli-client",
+  "version": "1.0.0",
+  "description": "Command-line interface for SoftEng 2024 API",
+  "main": "se2459.js",
+  "bin": {
+    "se2459": "./se2459.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "license": "MIT"
+}

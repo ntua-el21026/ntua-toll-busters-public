@@ -1,0 +1,14 @@
+# Ignore SSL certificates and private keys
+backend/ssl/server.key
+backend/ssl/server.cert
+backend/ssl/server.crt
+
+# Ignore environment variables
+.env
+
+cli/.token
+cli/.token.*.tmp
+backend/uploads/
+
+# Ignore node_modules (since dependencies can be reinstalled)
+node_modules/

@@ -1,0 +1,175 @@
+Question:
+------------------
+Give a readme file for this operation.
+
+Answer:
+---------------
+Below is an example README file in Markdown that documents the CLI application, its operations, and how to run tests. You can save this as README.md at the root of your project.
+
+markdown
+Αντιγραφή
+# Toll System CLI Application
+
+This project provides a command-line interface (CLI) to interact with a toll system backend. It allows administrative operations such as checking system health, resetting toll passes and stations, managing users, and more.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+  - [Common Commands](#common-commands)
+  - [Admin Commands](#admin-commands)
+  - [Other Commands](#other-commands)
+- [Testing](#testing)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+## Overview
+
+The CLI application is built with Node.js using the [Commander](https://www.npmjs.com/package/commander) library. It uses [Axios](https://www.npmjs.com/package/axios) for HTTP requests to communicate with the backend API. The tool supports user authentication (login/logout), system health checks, resets, user administration, pass analysis, invoice operations, and more.
+
+## Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone <repository_url>
+   cd softeng24-59
+Install Dependencies
+
+Ensure you have Node.js installed (v18 or later is recommended). Then, run:
+
+bash
+Αντιγραφή
+npm install
+Configuration
+The CLI reads configuration from environment variables. Create a .env file in the project or in the cli directory and set the following:
+
+env
+Αντιγραφή
+BASE_URL=https://localhost:9115/api
+Note: The application disables certificate verification by setting NODE_TLS_REJECT_UNAUTHORIZED to 0 (see the CLI code). This is convenient for development but insecure in production.
+
+Usage
+The CLI application is located in the cli directory. You can run commands using Node.js. For example:
+
+bash
+Αντιγραφή
+node se2459.js <command> [options]
+Common Commands
+Login
+
+Authenticate and save an authentication token to a file (.token):
+
+bash
+Αντιγραφή
+node se2459.js login --username admin --passw freepasses4all
+Healthcheck
+
+Check the system’s health:
+
+bash
+Αντιγραφή
+node se2459.js healthcheck
+Expected output includes details like the database connection string, number of stations, and passes.
+
+Reset Passes
+
+Reset toll passes in the system:
+
+bash
+Αντιγραφή
+node se2459.js resetpasses
+Reset Stations
+
+Reset station data (e.g., from a CSV file):
+
+bash
+Αντιγραφή
+node se2459.js resetstations
+Logout
+
+Log out and remove the authentication token:
+
+bash
+Αντιγραφή
+node se2459.js logout
+Admin Commands
+Use the admin command to perform administrative tasks:
+
+List Users
+
+bash
+Αντιγραφή
+node se2459.js admin --users
+This displays a list of registered users.
+
+Add Passes from CSV
+
+Upload a CSV file with toll passes:
+
+bash
+Αντιγραφή
+node se2459.js admin --addpasses --source csv/passes-sample.csv
+Ensure that the CSV file exists at the specified path relative to the CLI folder.
+
+Modify/Create Users
+
+(Additional options include --usermod, --username, and --passw.)
+
+Other Commands
+Other available commands include:
+
+tollstationpasses: Query toll station passes.
+passanalysis: Analyze pass data between station and tag operators.
+passescost: Retrieve cost details for passes.
+chargesby: Get charge information by operator.
+generateinvoices: Generate invoices between operators.
+payinvoice: Mark an invoice as paid.
+For full details on all commands and options, run:
+
+bash
+Αντιγραφή
+node se2459.js --help
+Testing
+The project includes a test suite written with Mocha and Chai. To run the tests, execute:
+
+bash
+Αντιγραφή
+npm test
+The tests will:
+
+Automatically log in as the admin user.
+Run commands like healthcheck, reset passes, reset stations, list users, and add passes.
+Validate that responses match the expected outputs.
+Clean up by removing the token file after tests.
+Note: The tests set the working directory to the CLI folder so that relative paths (like for the .token file and CSV file) resolve correctly.
+
+Troubleshooting
+TLS Certificate Warning:
+The CLI disables TLS certificate verification (by setting NODE_TLS_REJECT_UNAUTHORIZED=0), so you will see warnings about insecure TLS connections. This is intended for development purposes only.
+
+Missing Token Error:
+If you see errors indicating that the authentication token is missing, ensure that you run the login command before executing other commands.
+
+File Not Found Errors:
+Verify that paths (such as the CSV file for adding passes) are correct relative to the CLI directory.
+
+License
+Include your license information here (for example, MIT License).
+
+Contributing
+Contributions are welcome! Please open issues or submit pull requests if you have improvements or bug fixes.
+
+Contact
+For any questions or further information, please contact [Your Name or Email].
+
+yaml
+Αντιγραφή
+
+---
+
+This README provides an overview of the application, installation and configuration instructions, command usage details, test

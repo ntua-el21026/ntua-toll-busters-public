@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Toll Busters</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="module" src="../js/dashboard.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <script>
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+
+    <!-- Welcome Section -->
+    <section class="welcome fade-in">
+        <h1 id="welcome-message">Welcome to Your Dashboard</h1>
+        <p>Your go-to platform for managing toll data, analyzing statistics, and handling invoices.</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us fade-in">
+        <div class="about-us-content">
+            <div class="about-us-img-container">
+                <img src="../assets/about_us.png" alt="About Us Image" class="about-us-img">
+            </div>
+            <div class="about-us-text">
+                <h2>About Us</h2>
+                <p>We specialize in toll interoperability between different highway systems, providing seamless communication and toll data analysis. Our system supports the management of toll data, enabling the automatic calculation of financial settlements between toll operators, ensuring fairness and transparency across different networks. We are committed to enhancing traffic management systems and ensuring accurate and efficient tolling operations. We also offer detailed statistical data to help our partners optimize operations and improve decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toll Stations and Overview Section -->
+    <section class="toll-stations fade-in">
+        <div class="toll-stations-content">
+            <div class="toll-stations-text">
+                <h3>Toll Stations and Overview</h3>
+                <p>Our system interfaces with several toll stations, including Aodos, Egnatia, Attiki Odos, Moreas, and others. Each station is connected to our platform, which ensures that all toll transactions are processed efficiently and accurately. Below are the toll stations integrated into our system:</p>
+                <ul>
+                    <li>Aodos</li>
+                    <li>Egnatia</li>
+                    <li>Attiki Odos</li>
+                    <li>Moreas</li>
+                    <li>Kentriki Greece Toll</li>
+                    <li>Ioannina Toll</li>
+                    <li>Thessaloniki Toll</li>
+                </ul>
+            </div>
+            <div class="toll-stations-img-container">
+                <img src="../assets/tolls.png" alt="Toll Stations Image" class="toll-stations-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features fade-in">
+        <h2>Explore Features</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Analyze Statistics</h3>
+                <p>Gain insights into toll usage with interactive graphs and reports.</p>
+                <a href="statistics.html" class="btn">View Stats</a>
+            </div>
+            <div class="feature">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Manage Invoices</h3>
+                <p>View, manage, and pay outstanding invoices efficiently.</p>
+                <a href="invoices.html" class="btn">Manage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+</body>
+</html>

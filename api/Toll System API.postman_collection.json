@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "6f589abc-0581-4753-9887-50a47e51863a",
+		"name": "Toll System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41755345"
+	},
+	"item": [
+		{
+			"name": "https://localhost:9115/api/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"if (responseJson.token) {\r",
+							"    pm.globals.set(\"authToken\", responseJson.token);\r",
+							"    pm.environment.set(\"authToken\", responseJson.token);\r",
+							"    console.log(\"Saved token:\", responseJson.token);\r",
+							"} else {\r",
+							"    console.error(\"Login failed:\", responseJson);\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "NO_operator",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{localOperatorPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:9115/api/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/invoice/generate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/invoice/generate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"invoice",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/invoice/pay",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"issuing_op_id\": \"NO\",\r\n    \"receiving_op_id\": \"GE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:9115/api/invoice/pay",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"invoice",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"if (responseJson.token) {\r",
+							"    pm.globals.set(\"authToken\", responseJson.token);\r",
+							"    pm.environment.set(\"authToken\", responseJson.token);\r",
+							"    console.log(\"Saved token:\", responseJson.token);\r",
+							"} else {\r",
+							"    console.error(\"Login failed:\", responseJson);\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{localAdminPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:9115/api/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/admin/healthcheck",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/admin/healthcheck",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"admin",
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/tollStationPasses/:tollStationID/:date_from/:date_to",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/tollStationPasses/:tollStationID/:date_from/:date_to",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"tollStationPasses",
+						":tollStationID",
+						":date_from",
+						":date_to"
+					],
+					"variable": [
+						{
+							"key": "tollStationID",
+							"value": "NO06"
+						},
+						{
+							"key": "date_from",
+							"value": "20220101"
+						},
+						{
+							"key": "date_to",
+							"value": "20220131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/passAnalysis/:stationOpID/:tagOpID/:date_from/:date_to",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/passAnalysis/:stationOpID/:tagOpID/:date_from/:date_to",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"passAnalysis",
+						":stationOpID",
+						":tagOpID",
+						":date_from",
+						":date_to"
+					],
+					"variable": [
+						{
+							"key": "stationOpID",
+							"value": "EG"
+						},
+						{
+							"key": "tagOpID",
+							"value": "NO"
+						},
+						{
+							"key": "date_from",
+							"value": "20220101"
+						},
+						{
+							"key": "date_to",
+							"value": "20220131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/passesCost/:tollOpID/:tagOpID/:date_from/:date_to?format=csv",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/passesCost/:tollOpID/:tagOpID/:date_from/:date_to?format=csv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"passesCost",
+						":tollOpID",
+						":tagOpID",
+						":date_from",
+						":date_to"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv"
+						}
+					],
+					"variable": [
+						{
+							"key": "tollOpID",
+							"value": "NA"
+						},
+						{
+							"key": "tagOpID",
+							"value": "OO"
+						},
+						{
+							"key": "date_from",
+							"value": "20220101"
+						},
+						{
+							"key": "date_to",
+							"value": "20220131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/chargesBy/:tollOpID/:date_from/:date_to?format=csv",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/chargesBy/:tollOpID/:date_from/:date_to?format=csv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"chargesBy",
+						":tollOpID",
+						":date_from",
+						":date_to"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "csv"
+						}
+					],
+					"variable": [
+						{
+							"key": "tollOpID",
+							"value": "NA"
+						},
+						{
+							"key": "date_from",
+							"value": "20220101"
+						},
+						{
+							"key": "date_to",
+							"value": "20220131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/admin/resetpasses",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/admin/resetpasses",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"admin",
+						"resetpasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/admin/resetstations",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/admin/resetstations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"admin",
+						"resetstations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/admin/addpasses",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamp\": \"{{timestamp}}\",\r\n    \"tollID\": \"{{tollID}}\",\r\n    \"tagHomeID\": \"{{tagHomeID}}\",\r\n    \"charge\": \"{{charge}}\",\r\n    \"tagRef\": \"{{tagRef}}\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:9115/api/admin/addpasses",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"admin",
+						"addpasses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:9115/api/logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-OBSERVATORY-AUTH",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:9115/api/logout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9115",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.sendRequest({\r",
+					"    url: \"https://localhost:9115/api/auth/login\",  // Your login endpoint\r",
+					"    method: \"POST\",\r",
+					"    header: {\r",
+					"        \"Content-Type\": \"application/x-www-form-urlencoded\"\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: \"urlencoded\",\r",
+					"        urlencoded: [\r",
+					"            { key: \"username\", value: \"admin\" },  // Replace with actual credentials\r",
+					"            { key: \"password\", value: \"freepasses4all\" }\r",
+					"        ]\r",
+					"    }\r",
+					"}, function (err, response) {\r",
+					"    if (!err && response.json().token) {\r",
+					"        let token = response.json().token;  // Extract token from response\r",
+					"        pm.globals.set(\"authToken\", token); // Store token globally\r",
+					"        console.log(\"Token saved:\", token);\r",
+					"    } else {\r",
+					"        console.error(\"Login failed:\", err || response.text());\r",
+					"    }\r",
+					"});\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

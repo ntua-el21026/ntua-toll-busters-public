@@ -1,0 +1,170 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's width/height */
+    font-family: 'Arial', sans-serif;
+    background: #e3e8ef; /* Full-width background */
+    color: #2c3e50; /* Darker text for readability */
+    width: 100%; /* Ensures the full width of the page is used */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 40px 20px;
+    background: #d1dae4; /* Matching the hero section background */
+    color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for the background */
+}
+
+.welcome h1 {
+    font-size: 2.5rem; /* Slightly smaller font */
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2rem; /* Slightly smaller font */
+}
+
+/* About Us Section */
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center the content */
+    padding: 40px 20px;
+    background: #d1dae4; /* Matching the hero section background */
+    color: #2c3e50;
+    width: 100%; /* Full width for the background */
+}
+
+.about-us-content {
+    display: flex;
+    justify-content: space-between;
+    width: 75%; /* 75% of screen width for content */
+    margin: 0 auto; /* Centers the content */
+}
+
+.about-us-text {
+    max-width: 600px;
+    font-size: 1.1rem; /* Slightly smaller font */
+    line-height: 1.6; /* Line height for readability */
+}
+
+.about-us-img-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 300px; /* Constrain image size */
+}
+
+.about-us-img {
+    max-width: 100%; /* Prevent image stretching horizontally */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    max-height: 200px; /* Optional: ensures image doesn't stretch vertically */
+}
+
+/* Toll Stations Section */
+.toll-stations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center the content */
+    padding: 40px 20px;
+    background: #d1dae4; /* Matching the hero section background */
+    color: #2c3e50;
+    width: 100%; /* Full width for the background */
+}
+
+.toll-stations-content {
+    display: flex;
+    justify-content: space-between;
+    width: 75%; /* 75% of screen width for content */
+    margin: 0 auto; /* Centers the content */
+}
+
+.toll-stations-text {
+    max-width: 600px;
+    font-size: 1.1rem; /* Slightly smaller font */
+    line-height: 1.6; /* Line height for readability */
+}
+
+.toll-stations-img-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 400px; /* Constrain image size */
+}
+
+.toll-stations-img {
+    max-width: 100%; /* Prevent image stretching horizontally */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    max-height: 250px; /* Optional: ensures image doesn't stretch vertically */
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e3e8ef; /* Matches the body background */
+    width: 100%; /* Full width for the background */
+}
+
+.features h2 {
+    color: #007acc; /* Brighter blue for the heading */
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure feature boxes are larger horizontally */
+    gap: 20px; /* Ensures consistent gap between boxes */
+    justify-items: center; /* Center items in each grid cell */
+    width: 100%; /* Ensures the grid takes up the available width */
+    margin: 0 auto; /* Centers the grid */
+}
+
+.feature {
+    background: #f0f4f8; /* Brighter feature cards */
+    padding: 20px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    text-align: center;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures button alignment */
+    height: 200px; /* Increased height */
+    width: 380px; /* Increased width */
+    max-width: 380px; /* Ensure boxes don't get too large */
+}
+
+.feature i {
+    font-size: 2rem;
+    color: #007acc;
+}
+
+.feature h3 {
+    margin: 10px 0;
+    color: #007acc;
+}
+
+.feature p {
+    font-size: 1rem; /* Slightly smaller text */
+    margin-bottom: 15px;
+}
+
+.feature a.btn {
+    background: #007acc;
+    color: #fff;
+    padding: 8px 15px; /* Smaller padding */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-top: auto; /* Ensures the button stays at the bottom of the feature card */
+}
+
+.feature a.btn:hover {
+    background: #005b99;
+}

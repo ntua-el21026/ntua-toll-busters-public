@@ -1,0 +1,15 @@
+OpID,Operator,TollID,Name,PM,Locality,Road,Lat,Long,Email,Price1,Price2,Price3,Price4
+AM,Synthetic Operator 01,AM08,Demonstration Gate 01-1,Demo KM 11,Example District 01,Demo Route 01,10.011,-139.989,operator-01@example.invalid,1.23,1.83,2.42,3.02
+AM,Synthetic Operator 01,AM09,Demonstration Gate 01-2,Demo KM 12,Example District 01,Demo Route 01,10.012,-139.988,operator-01@example.invalid,1.32,1.92,2.52,3.12
+EG,Synthetic Operator 02,EG01,Demonstration Gate 02-1,Demo KM 21,Example District 02,Demo Route 02,10.021,-139.979,operator-02@example.invalid,1.35,1.95,2.55,3.15
+EG,Synthetic Operator 02,EG02,Demonstration Gate 02-2,Demo KM 22,Example District 02,Demo Route 02,10.022,-139.978,operator-02@example.invalid,1.45,2.05,2.65,3.25
+KO,Synthetic Operator 03,KO01,Demonstration Gate 03-1,Demo KM 31,Example District 03,Demo Route 03,10.031,-139.969,operator-03@example.invalid,1.48,2.08,2.67,3.27
+KO,Synthetic Operator 03,KO02,Demonstration Gate 03-2,Demo KM 32,Example District 03,Demo Route 03,10.032,-139.968,operator-03@example.invalid,1.57,2.17,2.77,3.38
+MO,Synthetic Operator 04,MO01,Demonstration Gate 04-1,Demo KM 41,Example District 04,Demo Route 04,10.041,-139.959,operator-04@example.invalid,1.60,2.20,2.80,3.40
+MO,Synthetic Operator 04,MO02,Demonstration Gate 04-2,Demo KM 42,Example District 04,Demo Route 04,10.042,-139.958,operator-04@example.invalid,1.70,2.30,2.90,3.50
+NAO,Synthetic Operator 05,NAO04,Demonstration Gate 05-1,Demo KM 51,Example District 05,Demo Route 05,10.051,-139.949,operator-05@example.invalid,1.73,2.33,2.92,3.52
+NAO,Synthetic Operator 05,NAO05,Demonstration Gate 05-2,Demo KM 52,Example District 05,Demo Route 05,10.052,-139.948,operator-05@example.invalid,1.82,2.42,3.02,3.62
+NO,Synthetic Operator 06,NO01,Demonstration Gate 06-1,Demo KM 61,Example District 06,Demo Route 06,10.061,-139.939,operator-06@example.invalid,1.85,2.45,3.05,3.65
+NO,Synthetic Operator 06,NO02,Demonstration Gate 06-2,Demo KM 62,Example District 06,Demo Route 06,10.062,-139.938,operator-06@example.invalid,1.95,2.55,3.15,3.75
+OO,Synthetic Operator 07,OO03,Demonstration Gate 07-1,Demo KM 71,Example District 07,Demo Route 07,10.071,-139.929,operator-07@example.invalid,1.98,2.58,3.17,3.77
+OO,Synthetic Operator 07,OO04,Demonstration Gate 07-2,Demo KM 72,Example District 07,Demo Route 07,10.072,-139.928,operator-07@example.invalid,2.08,2.68,3.28,3.88

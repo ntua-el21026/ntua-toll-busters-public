@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unpaid Invoices</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/invoices.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/invoices.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('../components/navbar.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+
+    <section class="invoices">
+        <div class="header">
+            <h1>Unpaid Invoices</h1>
+            <p>Manage all your unpaid invoices here. Select an invoice to proceed with secure payment.</p>
+        </div>
+        <p id="status-message"></p>
+        <table id="invoice-table" class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Receiving Operator</th>
+                    <th>Amount (€)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Invoice rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+</body>
+</html>

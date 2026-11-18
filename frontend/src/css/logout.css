@@ -1,0 +1,75 @@
+/* Dark Blue Palette */
+:root {
+    --blue-cath: #d1dae4;
+    --medium-blue: #112240;
+    --light-blue: #1f4287;
+    --accent-blue: #3f72af;
+    --white: #ffffff;
+    --muted-text: #a8b2d1;
+    --hover-blue: #3b82f6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--blue-cath); /* Dark blue background */
+    color: var(--white); /* White text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    background-color: var(--medium-blue); /* Medium blue card background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+}
+
+.card h1 {
+    font-size: 2.2rem;
+    color: white; /* Accent blue for the heading */
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--muted-text); /* Muted text color for the description */
+    margin-bottom: 30px;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: var(--accent-blue); /* Accent blue button */
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 500;
+}
+
+.logout-button:hover {
+    background-color: var(--hover-blue); /* Bright blue hover effect */
+    transform: translateY(-2px);
+}
